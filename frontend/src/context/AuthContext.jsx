@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider value={contextValue}>
       {!loading && children}
-    </Auth-Provider>
+    </AuthContext.Provider> // <-- ¡LÍNEA CORREGIDA!
   );
 };
 
