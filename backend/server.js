@@ -28,10 +28,8 @@ connectDB();
 
 // --- ¡NUEVA CONFIGURACIÓN DE CORS! ---
 const allowedOrigins = [
-  'http://localhost:5173', // Permite el acceso desde tu frontend en desarrollo local
-  // Cuando tengas tu dirección pública o dominio, añádelo aquí.
-  // ej: 'http://<TU_IP_PUBLICA>:5173',
-  // ej: 'https://www.drax.cl'
+  'http://localhost:5173',
+  'https://api-wod-generator.vercel.app' // <-- ¡AÑADE LA URL DE TU APP DE VERCEL AQUÍ!
 ];
 
 const corsOptions = {
