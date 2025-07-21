@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5001/api/auth/';
+const API_URL = import.meta.env.VITE_API_URL + '/api/auth/';
 
 /**
  * Permite a un admin registrar un nuevo usuario.

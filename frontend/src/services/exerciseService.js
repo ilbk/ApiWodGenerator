@@ -1,10 +1,15 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5001/api/exercises/';
+const API_URL = import.meta.env.VITE_API_URL + '/api/exercises/';
 
+// Obtiene el token del localStorage para enviarlo en las cabeceras
 const getConfig = () => {
   const token = localStorage.getItem('token');
-  return { headers: { 'x-auth-token': token } };
+  return {
+    headers: {
+      'x-auth-token': token,
+    },
+  };
 };
 
 const getAllExercises = () => {
@@ -19,7 +24,6 @@ const deleteExercise = (id) => {
   return axios.delete(API_URL + id, getConfig());
 };
 
-// --- ¡NUEVA FUNCIÓN! ---
 const updateExercise = (id, exerciseData) => {
   return axios.put(API_URL + id, exerciseData, getConfig());
 };
@@ -28,7 +32,7 @@ const exerciseService = {
   getAllExercises,
   createExercise,
   deleteExercise,
-  updateExercise, // <-- La añadimos para exportarla
+  updateExercise,
 };
 
 export default exerciseService;
